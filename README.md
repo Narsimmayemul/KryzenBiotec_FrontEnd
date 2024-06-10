@@ -1,7 +1,3 @@
-Creating a GitHub README file for your frontend project involves providing clear instructions on how to set up and run the application. Here’s a basic template you can use:
-
----
-
 # Product Store Frontend
 
 This repository contains the frontend code for a Product Store application built with React. The application allows users to sign up, sign in, view products, add new products, edit existing products, and delete products.
