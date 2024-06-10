@@ -111,6 +111,13 @@ const Products = () => {
                       setEditingProduct({ ...editingProduct, type: e.target.value })
                     }
                   />
+                  <input
+                    type="text"
+                    value={editingProduct.imageUrl}
+                    onChange={(e) =>
+                      setEditingProduct({ ...editingProduct, imageUrl: e.target.value })
+                    }
+                  />
                   <button className="product-button" onClick={editProduct}>Save</button>
                 </div>
               ) : (
