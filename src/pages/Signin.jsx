@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axiosInstance, { setAuthToken } from './axiosInstance';
+import axiosInstance from './axiosInstance';
 import './css/Signin.css';
-
 
 const Signin = () => {
   const [username, setUsername] = useState('');
@@ -17,12 +16,9 @@ const Signin = () => {
       const { token } = response.data;
 
       localStorage.setItem('token', token);
-      setAuthToken(token);
-
-      console.log(response.data);
-      navigate('/products');
+      navigate(`/products/unique=${token}`);
     } catch (error) {
-      setError(error.message);
+      setError('Invalid username or password. Please try again.');
     }
   };
 
