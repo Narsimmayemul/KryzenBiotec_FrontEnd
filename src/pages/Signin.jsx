@@ -14,8 +14,9 @@ const Signin = () => {
     try {
       const response = await axiosInstance.post('/signin', { username, password });
       const { token } = response.data;
-
+        console.log(response.data.user.id);
       localStorage.setItem('token', token);
+      localStorage.setItem('user', response.data.user.id);
       navigate(`/products/unique=${token}`);
     } catch (error) {
       setError('Invalid username or password. Please try again.');
